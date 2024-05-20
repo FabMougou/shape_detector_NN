@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import random
 from sklearn.model_selection import train_test_split
 
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, BatchNormalization, Activation, Dropout, Flatten, Dense
 
@@ -61,9 +61,9 @@ model.compile(loss= "sparse_categorical_crossentropy", optimizer = "adam", metri
 
 model.fit(X_train, y_train, verbose = 1, epochs = 5, validation_data= (X_test, y_test))
 
-model.save("convShapeV2.model")
+model.save("convShapeV2.h5")
 #-----------------------------------------------------
-model = tf.keras.models.load_model("convShapeV2.model")
+model = tf.keras.models.load_model("convShapeV2.h5")
 
 #-------Load test data
 ##for n in range(20):
